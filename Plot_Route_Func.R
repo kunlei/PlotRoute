@@ -42,6 +42,9 @@ PlotRoute <- function(NodeLoc, Routes) {
     # get sequence of ndoes representing vehicle routes
     visit.seq <- Routes[[i]]
     num.node <- length(visit.seq)
+    if (num.node < 2) {
+      next
+    }
     
     # get arc starting and ending points
     df <- data.frame(x1 = c(), x2 = c(), y1 = c(), y2 = c())
